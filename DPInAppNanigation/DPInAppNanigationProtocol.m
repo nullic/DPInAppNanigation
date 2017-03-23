@@ -26,12 +26,7 @@ static UIWindow * __weak _mainWindow = nil;
         result = [self dp_inapp_nav_openURL:url];
     }
     else {
-        if ([self.delegate respondsToSelector:@selector(application:openURL:options:)]) {
-            [self.delegate application:self openURL:url options:@{}];
-        }
-        else {
-            result = [DPInAppNanigationProtocol handleURL:url];
-        }
+        result = [DPInAppNanigationProtocol handleURL:url];
     }
 
     return result;
